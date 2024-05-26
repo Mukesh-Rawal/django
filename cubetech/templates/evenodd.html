@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>User Form</title>
+</head>
+<body>
+    <h1>Even Odd</h1>
+    <form method="post"> <!-- Default form method is GET-->
+
+        {% csrf_token %}
+
+        Enter Number:<input type="text" name="num1"><br>
+        <input type="submit", value="Even | Odd">
+        Output<input type="text" value="{{ c }}"><br>
+
+        {% if error %}
+            Please Enter The Number
+        {% endif %}
+    </form>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>User Form</title>
+</head>
+<body>
+    <form method="post" action="{% url 'submitform' %}"> <!-- Default form method is GET-->
+
+        {% csrf_token %}
+        {{ form }}
+
+        <!-- Enter first num: <input type="text" value="{{n1}}" name="val1"><br>
+        Enter Second num: <input type="text" value="{{n2}}" name="val2"><br> -->
+
+        <input type="submit", value="Add">
+        Sum: <input type="text" value="{{ output }}">
+    </form>
+</body>
+</html>

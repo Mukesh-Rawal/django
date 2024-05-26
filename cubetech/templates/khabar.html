@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>News</title>
+</head>
+
+<body>
+
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+
+            {% if newsData.has_previous %}
+
+            <li class="page-item">
+                <a class="page-link" href="/khabar/?page=1" tabindex="-1">First</a>
+            </li>
+
+            <li class="page-item">
+                <a class="page-link" href="/khabar/?page={{ newsData.previous_page_number }}" tabindex="-1">Previous</a>
+            </li>
+
+            {% endif %}
+
+            {% for n in pagelist  %}
+            <li class="page-item"><a class="page-link" href="/khabar/?page={{n}}">{{n}}</a></li>
+           {% endfor %}
+            {% if newsData.has_next %}
+            
+            <li class="page-item">
+                <a class="page-link" href="/khabar/?page={{ newsData.next_page_number }}">Next</a>
+            </li>
+
+            <li class="page-item">
+                <a class="page-link" href="/khabar/?page={{lastpage}}">Last</a>
+            </li>
+
+            {% endif %}
+
+        </ul>
+    </nav>
+
+    {% for n in newsData %}
+        {{n.news_title | safe}} <br>
+        {{n.news_desc | safe }} <br>
+        <img src="/media/{{n.news_image}}" alt="">
+
+
+    {% endfor%}
+
+
+</body>
+
+</html>

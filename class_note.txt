@@ -1,0 +1,20 @@
+Formate code in vs: shift+alt+f
+
+Class Projects
+1. demoproject
+2. welcome_project
+
+3. demoapp_project
+4. first_project
+
+5. webcalculator
+6. static_file project
+
+7. core project
+8. working_with_models
+
+9. todo task
+10. blogify
+
+11. calorie tracker
+12 cubetech // topic practice project

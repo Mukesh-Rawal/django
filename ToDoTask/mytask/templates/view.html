@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>All Task</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <th>
+                <td>Title</td>
+                <td>description</td>
+            </th>
+        </thead>
+        <tbody>
+            {% for task in tasks %}
+            <tr>
+                <td>{{ task.title }}</td>
+                <td>{{ task.description }}</td>
+            </tr>
+            {% endfor %}    
+        </tbody>
+    </table>
+    <a href="{% url 'add-task' %}">New Task</a>
+</body>
+</html>

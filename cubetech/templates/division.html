@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>User Form</title>
+</head>
+<body>
+    <h1>Student Marks</h1>
+    <form method="post"> <!-- Default form method is GET-->
+
+        {% csrf_token %}
+
+        Hindi: <input type="text" name="marks1"><br>
+        English: <input type="text" name="marks2"><br>
+        Math: <input type="text" name="marks3"><br>
+        Physics: <input type="text" name="marks4"><br>
+        Chemistry: <input type="text" name="marks5"><br>
+
+        <input type="submit", value="Result">
+        Total: <input type="text" value="{{t}}">
+        Percentage: <input type="text" value="{{p}}">
+        Division: <input type="text" value="{{d}}">
+    </form>
+</body>
+</html>

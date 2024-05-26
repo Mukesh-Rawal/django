@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+</head>
+
+<body>
+    {% for n in nData %}
+        {{n.title}} <br>
+        {{n.description}} <br>
+    {% endfor%}
+
+
+    <marquee behavior="" direction="" onmouseover="stop()" onmouseout="start()">
+        {% for n in newsInfo %}
+            <a href="/newsdetails/{{n.slug_title}}">{{n.news_title}}</a>&nbsp;
+        {% endfor%}
+    </marquee>
+
+
+    <h1>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h1>
+    <b>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean congue ultricies arcu, et mattis magna euismod
+        blandit. Aliquam rhoncus in urna ut luctus. Nullam accumsan urna at tellus molestie, vel dapibus ex dictum. Nunc
+        aliquet consequat massa, sed dignissim augue. Morbi eu sapien id nisl sollicitudin molestie non eu velit. Ut
+        lacus eros, rhoncus sed finibus sit amet, auctor ut ligula. Donec lobortis rutrum velit. Integer mollis ut lacus
+        et ultricies. Mauris malesuada rhoncus ante in imperdiet. Nullam eu varius magna. Donec dictum sem ex. Phasellus
+        tristique faucibus eros nec blandit. Nullam pulvinar placerat nibh eget lacinia.</b><br><br>
+
+    <b>List of langs</b>
+
+    {% for list in lang_list%}
+    <div>{{forloop.counter}} {{ list }}</div>
+    {% endfor %}<br>
+
+
+    <table border="1" cellpadding="10">
+        <tr>
+            <th>Name</th>
+            <th>Phone No.</th>
+        </tr>
+        {% for d in std_details %}
+        <tr>
+            <td>{{ d.name }}</td>
+            <td>{{ d.phone }}</td>
+        </tr>
+        {% endfor %}
+    </table><br>
+
+    {% if nums|length > 0 %}
+
+        {% for n in nums %}
+            {% if n > 23 %}
+            <div>{{ n }}</div>
+            {% endif %}
+        {% endfor %}
+
+    {% else %}
+        No data found
+    {% endif %}
+</body>
+
+</html>
+{% endblock %}
